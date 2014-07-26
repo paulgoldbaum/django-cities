@@ -489,8 +489,8 @@ class Command(BaseCommand):
             self.logger.debug("Adding postal code: {0}, {1}".format(pc.country, pc))
             try:
                 pc.save()
-            except Exception, e:
-                print e
+            except Exception as e:
+                print(e)
 
     def flush_country(self):
         self.logger.info("Flushing country data")

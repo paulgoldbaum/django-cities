@@ -1,7 +1,11 @@
-from django.utils.encoding import force_unicode
 from django.contrib.gis.db import models
 from django.contrib.gis.geos import Point
-from conf import settings
+from .conf import settings
+
+try:
+    from django.utils.encoding import force_unicode
+except ImportError:
+    from django.utils.encoding import force_text as force_unicode
 
 __all__ = [
         'Point', 'Country', 'Region', 'Subregion',
